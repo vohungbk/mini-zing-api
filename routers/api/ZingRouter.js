@@ -1,53 +1,27 @@
 const express = require("express");
 const router = express.Router();
 
-const ZingController = require("../../controllers/ZingController");
-
-router.get("/album", ZingController.getAlbum);
+const SpotifyController = require("../../controllers/SpotifyController");
 
 // getRecommendations
-router.get("/getRecommendations", ZingController.getRecommendations);
+router.get("/getRecommendations", SpotifyController.getRecommendations);
 
-// getSong
-router.get("/song", ZingController.getSong);
+// getTrack
+router.get("/getTrack", SpotifyController.getTrack);
 
-// getDetailPlaylist
-router.get("/detailplaylist", ZingController.getDetailPlaylist);
+// get NewReleases
+router.get("/getNewReleases", SpotifyController.getNewReleases);
 
-// getHome
-router.get("/home", ZingController.getHome);
+// get top Playlist
+router.get("/getTopPlaylists", SpotifyController.getTopPlaylist);
 
-// getTop100
-router.get("/top100", ZingController.getTop100);
+// get featured playlist
+router.get("/getFeaturedPlaylists", SpotifyController.getFeaturedPlaylists);
 
-// getChartHome
-router.get("/charthome", ZingController.getChartHome);
+// get Categoris
+router.get("/getCategories", SpotifyController.getCategories);
 
-// getNewReleaseChart
-router.get("/newreleasechart", ZingController.getNewReleaseChart);
-
-// getInfoSong
-router.get("/infosong", ZingController.getInfo);
-
-// getArtist
-router.get("/artist", ZingController.getArtist);
-
-// getArtistSong
-router.get("/artistsong", ZingController.getArtistSong);
-
-// getLyric
-router.get("/lyric", ZingController.getLyric);
-
-// search
-router.get("/search", ZingController.search);
-
-// getListMV
-router.get("/listmv", ZingController.getListMV);
-
-// getCategoryMV
-router.get("/categorymv", ZingController.getCategoryMV);
-
-// getVideo
-router.get("/video", ZingController.getVideo);
+// get Album
+router.get("/getAlbum", SpotifyController.getAlbum);
 
 module.exports = router;
