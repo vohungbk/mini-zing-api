@@ -24,4 +24,7 @@ router.get("/getCategories", SpotifyController.getCategories);
 // get Album
 router.get("/getAlbum", SpotifyController.getAlbum);
 
+// get Playlist
+router.get("/getPlaylist", SpotifyController.getPlaylist);
+
 module.exports = router;

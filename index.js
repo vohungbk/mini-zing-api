@@ -1,5 +1,5 @@
 const path = require("path");
-const jwt = require('jsonwebtoken');
+const jwt = require("jsonwebtoken");
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
 
 const authenticateJWT = (req, res, next) => {
   const authHeader = req.headers.authorization;
-  console.log('alo',{authHeader});
+  console.log("alo", { authHeader });
 
   if (authHeader) {
     const token = authHeader.split(" ")[1];
@@ -31,9 +31,9 @@ app.get("/", authenticateJWT, (req, res) => {
   res.sendFile(path.join(__dirname, "/index.html"));
 });
 
-// ZingMp3Router
-const ZingMp3Router = require("./routers/api/ZingRouter");
-app.use("/api", cors(), ZingMp3Router);
+// SpotifyRouter
+const SpotifyRouter = require("./routers/api/SpotifyRouter");
+app.use("/api", cors(), SpotifyRouter);
 
 // Page Error
 app.get("*", (req, res) => {

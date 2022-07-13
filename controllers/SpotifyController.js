@@ -86,6 +86,18 @@ class SpotifyController {
       }
     );
   }
+  getPlaylist(req, res) {
+    spotifyApi.setAccessToken(req.headers.authorization?.split(" ")[1]);
+    console.log(req.query.id);
+    spotifyApi.getPlaylist(req.query.id).then(
+      function (data) {
+        res.json({ data: { data: data.body } });
+      },
+      function (err) {
+        console.error(err);
+      }
+    );
+  }
 }
 
 module.exports = new SpotifyController();
