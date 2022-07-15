@@ -27,4 +27,25 @@ router.get("/getAlbum", SpotifyController.getAlbum);
 // get Playlist
 router.get("/getPlaylist", SpotifyController.getPlaylist);
 
+// get Category
+router.get("/getCategory", SpotifyController.getCategory);
+
+// get CategoryPlaylists
+router.get("/getCategoryPlaylists", SpotifyController.getCategoryPlaylists);
+
+// get Artists
+router.get("/getArtists", SpotifyController.getArtists);
+
+// get Artist
+router.get("/getArtist", SpotifyController.getArtist);
+
+// get Top Track
+router.get("/getTopTrack", SpotifyController.getTopTrack);
+
+// get Related Artists
+router.get("/getRelatedArtists", SpotifyController.getRelatedArtists);
+
+// get Album Artists
+router.get("/getAlbumArtists", SpotifyController.getAlbumArtists);
+
 module.exports = router;

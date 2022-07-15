@@ -88,13 +88,94 @@ class SpotifyController {
   }
   getPlaylist(req, res) {
     spotifyApi.setAccessToken(req.headers.authorization?.split(" ")[1]);
-    console.log(req.query.id);
     spotifyApi.getPlaylist(req.query.id).then(
       function (data) {
         res.json({ data: { data: data.body } });
       },
       function (err) {
         console.error(err);
+      }
+    );
+  }
+
+  getCategory(req, res) {
+    spotifyApi.setAccessToken(req.headers.authorization?.split(" ")[1]);
+    spotifyApi.getCategory(req.query.id).then(
+      function (data) {
+        res.json({ data: { data: data.body } });
+      },
+      function (err) {
+        console.log(err);
+      }
+    );
+  }
+  getCategoryPlaylists(req, res) {
+    spotifyApi.setAccessToken(req.headers.authorization?.split(" ")[1]);
+    spotifyApi.getPlaylistsForCategory(req.query.id).then(
+      function (data) {
+        res.json({ data: { data: data.body } });
+      },
+      function (err) {
+        console.log(err);
+      }
+    );
+  }
+  getArtists(req, res) {
+    spotifyApi.setAccessToken(req.headers.authorization?.split(" ")[1]);
+    spotifyApi.getArtists(req.query.ids).then(
+      function (data) {
+        res.json({ data: { data: data.body } });
+      },
+      function (err) {
+        console.log(err);
+      }
+    );
+  }
+
+  getArtist(req, res) {
+    spotifyApi.setAccessToken(req.headers.authorization?.split(" ")[1]);
+    spotifyApi.getArtist(req.query.id).then(
+      function (data) {
+        res.json({ data: { data: data.body } });
+      },
+      function (err) {
+        console.log(err);
+      }
+    );
+  }
+
+  getTopTrack(req, res) {
+    spotifyApi.setAccessToken(req.headers.authorization?.split(" ")[1]);
+    spotifyApi.getArtistTopTracks(req.query.id, "VN").then(
+      function (data) {
+        res.json({ data: { data: data.body } });
+      },
+      function (err) {
+        console.log(err);
+      }
+    );
+  }
+
+  getRelatedArtists(req, res) {
+    spotifyApi.setAccessToken(req.headers.authorization?.split(" ")[1]);
+    spotifyApi.getArtistRelatedArtists(req.query.id).then(
+      function (data) {
+        res.json({ data: { data: data.body } });
+      },
+      function (err) {
+        console.log(err);
+      }
+    );
+  }
+
+  getAlbumArtists(req, res) {
+    spotifyApi.setAccessToken(req.headers.authorization?.split(" ")[1]);
+    spotifyApi.getArtistAlbums(req.query.id).then(
+      function (data) {
+        res.json({ data: { data: data.body } });
+      },
+      function (err) {
+        console.log(err);
       }
     );
   }
