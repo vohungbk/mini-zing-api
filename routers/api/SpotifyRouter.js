@@ -48,4 +48,7 @@ router.get("/getRelatedArtists", SpotifyController.getRelatedArtists);
 // get Album Artists
 router.get("/getAlbumArtists", SpotifyController.getAlbumArtists);
 
+// get Album Artists
+router.get("/search", SpotifyController.search);
+
 module.exports = router;

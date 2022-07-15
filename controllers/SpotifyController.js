@@ -179,6 +179,18 @@ class SpotifyController {
       }
     );
   }
+
+  search(req, res) {
+    spotifyApi.setAccessToken(req.headers.authorization?.split(" ")[1]);
+    spotifyApi.search(req.query.q, req.query.types).then(
+      function (data) {
+        res.json({ data: { data: data.body } });
+      },
+      function (err) {
+        console.log(err);
+      }
+    );
+  }
 }
 
 module.exports = new SpotifyController();
